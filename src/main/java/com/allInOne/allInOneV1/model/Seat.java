@@ -17,7 +17,6 @@ public class Seat {
     @JoinColumn(name="theatre_id", nullable=false)
     private Theatre theatre;
 
-
     public int getSeatId() {
         return seatId;
     }
@@ -40,5 +39,13 @@ public class Seat {
 
     public void setNumOfSeats(int numOfSeats) {
         this.numOfSeats = numOfSeats;
+    }
+
+    public Theatre getTheatre() {
+        return theatre;
+    }
+
+    public void setTheatre(Theatre theatre) {
+        this.theatre = theatre;
     }
 }

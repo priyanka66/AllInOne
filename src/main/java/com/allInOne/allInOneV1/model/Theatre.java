@@ -52,14 +52,11 @@ public class Theatre {
         this.longitude = longitude;
     }
 
+    public List<Seat> getSeats() {
+        return seats;
+    }
 
-
-
-
-
-
-
-
-
-
+    public void setSeats(List<Seat> seats) {
+        this.seats = seats;
+    }
 }
