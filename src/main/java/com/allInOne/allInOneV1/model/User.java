@@ -25,8 +25,8 @@ public class User {
 
     private String password;
 
-    @OneToMany(mappedBy="user")
-    private Set<Rating> ratings;
+//    @OneToMany(mappedBy="user")
+//    private Set<Rating> ratings;
 
     public Integer getUserId() {
         return userId;
@@ -76,11 +76,11 @@ public class User {
         this.password = password;
     }
 
-    public Set<Rating> getRatings() {
-        return ratings;
-    }
-
-    public void setRatings(Set<Rating> ratings) {
-        this.ratings = ratings;
-    }
+//    public Set<Rating> getRatings() {
+//        return ratings;
+//    }
+//
+//    public void setRatings(Set<Rating> ratings) {
+//        this.ratings = ratings;
+//    }
 }

@@ -1,5 +1,7 @@
 package com.allInOne.allInOneV1.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -30,10 +32,11 @@ public class Movie {
 
 
     @OneToMany(mappedBy="movie")
-    private Set<Rating> ratings;
+    private List<Rating> ratings;
 
+    public Movie() {
 
-
+    }
     public Integer getMovieId() {
         return movieId;
     }
@@ -82,11 +85,11 @@ public class Movie {
         this.actors = actors;
     }
 
-    public Set<Rating> getRatings() {
+    public List<Rating> getRatings() {
         return ratings;
     }
 
-    public void setRatings(Set<Rating> ratings) {
-        this.ratings = ratings;
+    public void setRatings(Rating ratings) {
+        this.ratings.add(ratings);
     }
 }
