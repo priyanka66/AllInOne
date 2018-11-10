@@ -1,15 +1,15 @@
 package com.allInOne.allInOneV1.repository;
 
 import com.allInOne.allInOneV1.model.Movie;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface MovieRepository extends CrudRepository<Movie, Integer> {
-    @Override
-    List<Movie> findAll();
-
-    @Override
-    Optional<Movie> findById(Integer integer);
+@Repository
+public interface MovieRepository extends JpaRepository <Movie, Integer>, MovieRepositoryCustom{
+//    List<Movie> findAll();
+//    Optional<Movie> findById(Integer integer);
+//   List<Employee> getFirstNamesLike(String firstName);
 }
