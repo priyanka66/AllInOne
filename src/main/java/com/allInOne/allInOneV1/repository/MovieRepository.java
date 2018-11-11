@@ -9,7 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface MovieRepository extends JpaRepository <Movie, Integer>, MovieRepositoryCustom{
-//    List<Movie> findAll();
-//    Optional<Movie> findById(Integer integer);
-//   List<Employee> getFirstNamesLike(String firstName);
+
 }

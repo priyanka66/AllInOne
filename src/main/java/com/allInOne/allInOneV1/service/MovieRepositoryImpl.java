@@ -8,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -20,11 +19,18 @@ public class MovieRepositoryImpl implements MovieRepositoryCustom {
 
     @Override
     public List<Movie> getMovieNamesLike(String title) {
-//        String query = "select m from Movie m where title like";
         Query query = entityManager.createNativeQuery("SELECT em.* FROM Movie as em " +
                 "WHERE em.title LIKE ?", Movie.class);
         query.setParameter(1, title + "%");
         return query.getResultList();
+    }
+
+
+    @Override
+    public List<Movie> getTopMovies(int count) {
+        Query query = entityManager.createQuery("SELECT m FROM Movie m JOIN Rating r ON " +
+                "m.movieId = r.movie.movieId ORDER BY r.rating DESC");
+        return query.setMaxResults(2).getResultList();
     }
 }
 

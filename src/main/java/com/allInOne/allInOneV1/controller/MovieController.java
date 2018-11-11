@@ -73,7 +73,13 @@ public class MovieController {
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
     List<Movie> getMovieNamesLike(@RequestParam("title") String name) {
-        System.out.print(name);
         return movieRepository.getMovieNamesLike(name);
+    }
+
+    @RequestMapping(path="/top", method = RequestMethod.GET, produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public @ResponseBody
+    List<Movie> getMovieNamesLike(@RequestParam("count") int count) {
+        return movieRepository.getTopMovies(count);
     }
 }

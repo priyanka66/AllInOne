@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface MovieRepositoryCustom {
     List<Movie> getMovieNamesLike(String title);
+    List<Movie> getTopMovies(int count);
 }
