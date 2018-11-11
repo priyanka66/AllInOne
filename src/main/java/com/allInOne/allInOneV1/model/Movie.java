@@ -81,8 +81,9 @@ public class Movie {
         return actors;
     }
 
-    public void setActors(Set<Actor> actors) {
-        this.actors = actors;
+    public void setActors(Actor actor) {
+
+        this.actors.add(actor);
     }
 
     public List<Rating> getRatings() {

@@ -1,9 +1,13 @@
 package com.allInOne.allInOneV1.controller;
 
+import com.allInOne.allInOneV1.model.Actor;
 import com.allInOne.allInOneV1.model.Movie;
 import com.allInOne.allInOneV1.model.Rating;
+import com.allInOne.allInOneV1.repository.ActorRespository;
 import com.allInOne.allInOneV1.repository.MovieRepository;
 import com.allInOne.allInOneV1.repository.RatingRepository;
+import com.allInOne.allInOneV1.service.SendSMS;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +24,18 @@ public class MovieController {
     @Autowired
     private RatingRepository ratingRepository;
 
+    @Autowired
+    private ActorRespository actorRespository;
+
+    SendSMS sms = new SendSMS();
+
     @RequestMapping(path="/add", method = RequestMethod.POST, produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public void createMovie(@RequestBody Movie newMovie) {
         movieRepository.save(newMovie);
     }
 
-    @RequestMapping(path="/{movieId}/", method = RequestMethod.GET)
+    @RequestMapping(path="/{movieId}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody Movie movie(@PathVariable(value = "movieId") int movieId) {
         Movie movie = verifyMovie(movieId);
@@ -50,24 +59,20 @@ public class MovieController {
         ratingRepository.save(newRating);
         movie.setRatings(newRating);
         movieRepository.save(movie);
+//        sms.sendSMS("+13159499748","+13203350324");
     }
 
     private Movie verifyMovie(int movieId) throws NoSuchElementException {
-        System.out.print(movieRepository.findById(movieId).get());
         Movie movie = movieRepository.findById(movieId).get();
 
         if (movie == null) {
-            throw new NoSuchElementException("Movie doesnot exist " + movieId);
+            throw new NoSuchElementException("Movie does not exist " + movieId);
         }
 
         return movie;
     }
 
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(NoSuchElementException.class)
-    public String return400(NoSuchElementException ex) {
-        return ex.getMessage();
-    }
+
 
     @RequestMapping(path="/title", method = RequestMethod.GET, produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
@@ -81,5 +86,30 @@ public class MovieController {
     public @ResponseBody
     List<Movie> getMovieNamesLike(@RequestParam("count") int count) {
         return movieRepository.getTopMovies(count);
+    }
+
+    @RequestMapping(path="/actor", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+     public void addMovieActor(@RequestBody ObjectNode postData) {
+            Movie movie = verifyMovie(postData.get("movieId").asInt());
+            Actor actor = verifyActor(postData.get("actorId").asInt());
+            movie.setActors(actor);
+            movieRepository.save(movie);
+            actor.setMovies(movie);
+            actorRespository.save(actor);
+    }
+
+    private Actor verifyActor(int actorId) throws NoSuchElementException {
+        Actor actor = actorRespository.findById(actorId).get();
+        if (actor == null) {
+            throw new NoSuchElementException("Actor does not exist " + actor);
+        }
+        return actor;
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(NoSuchElementException.class)
+    public String return400(NoSuchElementException ex) {
+        return ex.getMessage();
     }
 }

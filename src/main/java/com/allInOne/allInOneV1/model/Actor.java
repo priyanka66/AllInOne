@@ -1,6 +1,8 @@
 package com.allInOne.allInOneV1.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -58,12 +60,13 @@ public class Actor {
         this.gender = gender;
     }
 
+    @JsonIgnore
     public Set<Movie> getMovies() {
         return movies;
     }
 
-    public void setMovies(Set<Movie> movies) {
-        this.movies = movies;
-    }
+    public void setMovies(Movie movie) {
 
+        this.movies.add(movie);
+    }
 }
