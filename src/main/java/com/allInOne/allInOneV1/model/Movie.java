@@ -1,5 +1,6 @@
 package com.allInOne.allInOneV1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -18,6 +19,8 @@ public class Movie {
     private Date releaseDate;
 
     private String language;
+
+    private String movieImage;
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
@@ -67,6 +70,15 @@ public class Movie {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+
+    public String getMovieImage() {
+        return movieImage;
+    }
+
+    public void setMovieImage(String movieImage) {
+        this.movieImage = movieImage;
     }
 
     public Set<Genre> getGenres() {
