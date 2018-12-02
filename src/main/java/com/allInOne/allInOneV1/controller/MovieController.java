@@ -3,6 +3,7 @@ package com.allInOne.allInOneV1.controller;
 import com.allInOne.allInOneV1.model.Actor;
 import com.allInOne.allInOneV1.model.Movie;
 import com.allInOne.allInOneV1.model.Rating;
+import com.allInOne.allInOneV1.model.Theatre;
 import com.allInOne.allInOneV1.repository.ActorRespository;
 import com.allInOne.allInOneV1.repository.MovieRepository;
 import com.allInOne.allInOneV1.repository.RatingRepository;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(path="/movie")
@@ -62,7 +64,7 @@ public class MovieController {
 //        sms.sendSMS("+13159499748","+13203350324");
     }
 
-    private Movie verifyMovie(int movieId) throws NoSuchElementException {
+    public Movie verifyMovie(int movieId) throws NoSuchElementException {
         Movie movie = movieRepository.findById(movieId).get();
 
         if (movie == null) {
@@ -111,5 +113,16 @@ public class MovieController {
     @ExceptionHandler(NoSuchElementException.class)
     public String return400(NoSuchElementException ex) {
         return ex.getMessage();
+    }
+
+
+    @RequestMapping(path="/{movieID}/theatres", method = RequestMethod.GET, produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public @ResponseBody
+    List<Theatre> getTheatre(@PathVariable(value = "movieId") int movieId) {
+        Movie movie = verifyMovie(movieId);
+        List<Theatre> theatreList = movie.getTheatres().stream().collect(Collectors.toList());
+
+        return theatreList;
     }
 }
