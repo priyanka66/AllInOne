@@ -1,7 +1,5 @@
 package com.allInOne.allInOneV1.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.*;
 
@@ -36,7 +34,6 @@ public class Genre {
         this.genre = genre;
     }
 
-    @JsonIgnore
     public Set<Movie> getMovies() {
         return movies;
     }
