@@ -2,6 +2,10 @@ package com.allInOne.allInOneV1.controller;
 
 
 import com.allInOne.allInOneV1.service.PayPalClient;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -34,10 +38,14 @@ public class PayPalController {
      * @param request
      * @return
      */
-    @RequestMapping(path = "/complete/payment", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    @RequestMapping(path = "/complete/payment", method = RequestMethod.POST, produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<String, Object> completePayment(HttpServletRequest request){
-        return payPalClient.completePayment(request);
+    public String  completePayment(HttpServletRequest request) {
+        Map<String, Object> response = payPalClient.completePayment(request);
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+
+        return gson.toJson(response);
     }
 
     @RequestMapping(path = "/process", method = RequestMethod.GET)

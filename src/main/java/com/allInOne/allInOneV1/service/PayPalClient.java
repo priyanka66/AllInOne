@@ -1,5 +1,7 @@
 package com.allInOne.allInOneV1.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.paypal.base.rest.APIContext;
 import com.paypal.base.rest.PayPalRESTException;
 
@@ -14,6 +16,7 @@ import com.paypal.api.payments.Payment;
 import com.paypal.api.payments.PaymentExecution;
 import com.paypal.api.payments.RedirectUrls;
 import com.paypal.api.payments.Transaction;
+import org.json.JSONObject;
 import org.springframework.stereotype.Repository;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,8 +24,8 @@ import javax.servlet.http.HttpServletRequest;
 @Repository
 public class PayPalClient {
 
-    String clientId = "xyz";
-    String clientSecret = "xyz";
+    String clientId = "AcpMEAmujd37yEsk5rF4Q5dyouP-Y3lvGXzSFNFRh15xEhWOVgQRZ4uL8E3expNXdGaUgSrBfLBpze9r";
+    String clientSecret = "EAYFbb5thnYfCy3hIWFpSOzaqB9bpF94F7TbOuVWsYsLuBcIt_rh0YBcTVMZlW9BXe6Ys-YgIuQ8xaI5";
 
     APIContext context = new APIContext(clientId, clientSecret, "sandbox");
 
@@ -85,7 +88,7 @@ public class PayPalClient {
 
     }
 
-    public Map<String, Object> completePayment(HttpServletRequest req){
+    public Map<String, Object> completePayment(HttpServletRequest req) {
         Map<String, Object> response = new HashMap<String, Object>();
         Payment payment = new Payment();
         payment.setId(req.getParameter("paymentId"));
@@ -95,7 +98,6 @@ public class PayPalClient {
         try {
             APIContext context =  new APIContext(clientId, clientSecret, "sandbox");;
             Payment createdPayment = payment.execute(context, paymentExecution);
-            System.out.print(createdPayment);
             if(createdPayment!=null){
                 response.put("status", "success");
                 response.put("payment", createdPayment);
@@ -104,7 +106,6 @@ public class PayPalClient {
         } catch (PayPalRESTException e) {
             System.err.println(e.getDetails());
         }
-        System.out.print("response from my app " + response);
         return response;
     }
 
