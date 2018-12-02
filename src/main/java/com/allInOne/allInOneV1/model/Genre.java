@@ -38,7 +38,9 @@ public class Genre {
         return movies;
     }
 
-    public void setMovies(Set<Movie> movies) {
-        this.movies = movies;
+    public void setMovies(Movie movie) {
+        if (!this.movies.contains(movie)) {
+            this.movies.add(movie);
+        }
     }
 }

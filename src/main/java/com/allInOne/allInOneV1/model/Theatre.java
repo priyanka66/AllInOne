@@ -13,12 +13,22 @@ public class Theatre {
 
     private String theatreName;
 
-    private  double latitute;
+    private  double latitude;
 
     private  double longitude;
 
-    @OneToMany(mappedBy="theatre")
-    private List<Seat> seats;
+    private int numSeats;
+
+    private int availableSeats;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "Movie_Theatre",
+            joinColumns = { @JoinColumn(name = "theatre_id") },
+            inverseJoinColumns = { @JoinColumn(name = "movie_id") }
+    )
+    Set<Movie> movies = new HashSet<>();
+
 
     public int getTheatreId() {
         return theatreId;
@@ -36,12 +46,12 @@ public class Theatre {
         this.theatreName = theatreName;
     }
 
-    public double getLatitute() {
-        return latitute;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setLatitute(double latitute) {
-        this.latitute = latitute;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
     public double getLongitude() {
@@ -52,11 +62,31 @@ public class Theatre {
         this.longitude = longitude;
     }
 
-    public List<Seat> getSeats() {
-        return seats;
+
+    public Set<Movie> getMovies() {
+        return movies;
     }
 
-    public void setSeats(List<Seat> seats) {
-        this.seats = seats;
+    public void setMovies(Movie movie) {
+        if (!this.movies.contains(movie)) {
+            this.movies.add(movie);
+        }
     }
+
+    public int getNumSeats() {
+        return numSeats;
+    }
+
+    public void setNumSeats(int numSeats) {
+        this.numSeats = numSeats;
+    }
+
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
+
+    public void setAvailableSeats(int availableSeats) {
+        this.availableSeats = availableSeats;
+    }
+
 }

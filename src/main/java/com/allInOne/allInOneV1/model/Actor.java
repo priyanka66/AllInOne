@@ -66,7 +66,8 @@ public class Actor {
     }
 
     public void setMovies(Movie movie) {
-
-        this.movies.add(movie);
+        if (!this.movies.contains(movie)) {
+            this.movies.add(movie);
+        }
     }
 }

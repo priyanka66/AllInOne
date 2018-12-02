@@ -1,5 +1,6 @@
 package com.allInOne.allInOneV1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -33,6 +34,10 @@ public class Movie {
 
     @OneToMany(mappedBy="movie")
     private List<Rating> ratings;
+
+
+    @ManyToMany(mappedBy = "movies")
+    private Set<Theatre> theatres = new HashSet<>();
 
     public Movie() {
 
@@ -92,5 +97,16 @@ public class Movie {
 
     public void setRatings(Rating ratings) {
         this.ratings.add(ratings);
+    }
+
+    @JsonIgnore
+    public Set<Theatre> getTheatres() {
+        return theatres;
+    }
+
+    public void setTheatres(Theatre theatre) {
+        if (!this.theatres.contains(theatre)) {
+            this.theatres.add(theatre);
+        }
     }
 }
