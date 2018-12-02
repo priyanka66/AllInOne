@@ -20,7 +20,6 @@ public class Movie {
 
     private String language;
 
-
     private String movieImage;
 
     @ManyToMany(cascade = { CascadeType.ALL })
