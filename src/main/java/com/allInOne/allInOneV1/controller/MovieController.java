@@ -116,7 +116,7 @@ public class MovieController {
     }
 
 
-    @RequestMapping(path="/{movieID}/theatres", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(path="/{movieId}/theatres", method = RequestMethod.GET, produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
     List<Theatre> getTheatre(@PathVariable(value = "movieId") int movieId) {
