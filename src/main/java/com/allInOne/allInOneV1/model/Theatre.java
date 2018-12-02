@@ -17,6 +17,10 @@ public class Theatre {
 
     private  double longitude;
 
+    private int numSeats;
+
+    private int availableSeats;
+
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "Movie_Theatre",
@@ -68,4 +72,21 @@ public class Theatre {
             this.movies.add(movie);
         }
     }
+
+    public int getNumSeats() {
+        return numSeats;
+    }
+
+    public void setNumSeats(int numSeats) {
+        this.numSeats = numSeats;
+    }
+
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
+
+    public void setAvailableSeats(int availableSeats) {
+        this.availableSeats = availableSeats;
+    }
+
 }
