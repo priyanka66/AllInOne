@@ -20,6 +20,8 @@ public class Movie {
 
     private String language;
 
+
+
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "Movie_Genre",
