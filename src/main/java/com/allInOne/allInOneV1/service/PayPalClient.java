@@ -24,8 +24,8 @@ import javax.servlet.http.HttpServletRequest;
 @Repository
 public class PayPalClient {
 
-    String clientId = "AcpMEAmujd37yEsk5rF4Q5dyouP-Y3lvGXzSFNFRh15xEhWOVgQRZ4uL8E3expNXdGaUgSrBfLBpze9r";
-    String clientSecret = "EAYFbb5thnYfCy3hIWFpSOzaqB9bpF94F7TbOuVWsYsLuBcIt_rh0YBcTVMZlW9BXe6Ys-YgIuQ8xaI5";
+    String clientId = "xyz";
+    String clientSecret = "xyz";
 
     APIContext context = new APIContext(clientId, clientSecret, "sandbox");
 
