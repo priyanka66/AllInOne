@@ -5,14 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-    <title>Restaurant Review | Review</title>
-
+    <title>Booking</title>
+    <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
     <!-- Loading third party fonts -->
     <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Loading main css file -->
     <link rel="stylesheet" href="style.css">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="js/ie-support/html5.js"></script>
@@ -21,9 +30,7 @@
 
 </head>
 
-
 <body>
-
 
 <div id="site-content">
     <header class="site-header">
@@ -56,28 +63,55 @@
     </header>
     <main class="main-content">
         <div class="container">
-            <div class="page">
-                <div class="breadcrumbs">
-                    <a href="index.html">Home</a>
-                    <span>Restaurants</span>
+
+            <!-- Page Heading -->
+            <!-- Project One -->
+                <div class="page">
+                    <h1 id="moviesHeading"> Restaurant Booking </h1>
+                    <div id = "reserveRow" class="row">
+                    </div>
                 </div>
 
-                <!--<div class="filters">-->
-                    <!--<select name="#" id="op" class = "op" placeholder="Choose Category">-->
-                        <!--<option value="all" selected="selected">All</option>-->
-                        <!--<option value="crime">Crime</option>-->
-                        <!--<option value="action">Action</option>-->
-                        <!--<option value="romance">Romance</option>-->
-                        <!--<option value="comedy">Comedy</option>-->
-                        <!--<option value="drama">Drama</option>-->
-                    <!--</select>-->
-
+            <!--<div class="row">-->
+                <!--<div id = "movieRow" class="row">-->
+                <!--<div class="col-md-7">-->
+                    <!--<img class="img-fluid rounded mb-3 mb-md-0" src="dummy/imgs/destiny.jpg" alt="">-->
                 <!--</div>-->
-                <div id ="allMovies" class ="row">
+                <!--<div class="col-md-5" id="bookingrow">-->
+                    <!--<h3>Destiny USA</h3>-->
+                    <!--<h3>No. of seats:</h3>-->
+                    <!--<div id="seats" class="filters">-->
+                        <!--<select name="#" id="op" class = "op" placeholder="Choose Category">-->
+                            <!--<option value="1" selected="selected">1</option>-->
+                            <!--<option value="2">2</option>-->
+                            <!--<option value="3">3</option>-->
+                            <!--<option value="4">4</option>-->
+                            <!--<option value="5">5</option>-->
+                        <!--</select><br><br><br>-->
 
-                </div>
+                        <!--<button class="myButton"> Continue </button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!-- /.row -->
+
+            <!-- /.row -->
+
+            <hr>
+
+            <hr>
+            <!-- Pagination -->
+
+
+        </div>
+        <!-- /.container -->
+
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
             </div>
-        </div> <!-- .container -->
+            <!-- /.container -->
     </main>
     <footer class="site-footer">
         <div class="container">
@@ -92,10 +126,10 @@
                     <div class="widget">
                         <h3 class="widget-title">Recent Review</h3>
                         <ul class="no-bullet">
-                            <li>Lorem ipsum dolor</li>
-                            <li>Sit amet consecture</li>
-                            <li>Dolorem respequem</li>
-                            <li>Invenore veritae</li>
+                            <li><a href="#">Lorem ipsum dolor</a></li>
+                            <li><a href="#">Sit amet consecture</a></li>
+                            <li><a href="#">Dolorem respequem</a></li>
+                            <li><a href="#">Invenore veritae</a></li>
                         </ul>
                     </div>
                 </div>
@@ -103,10 +137,10 @@
                     <div class="widget">
                         <h3 class="widget-title">Help Center</h3>
                         <ul class="no-bullet">
-                            <li>Lorem ipsum dolor</li>
-                            <li>Sit amet consecture</li>
-                            <li>Dolorem respequem</li>
-                            <li>Invenore veritae</li>
+                            <li><a href="#">Lorem ipsum dolor</a></li>
+                            <li><a href="#">Sit amet consecture</a></li>
+                            <li><a href="#">Dolorem respequem</a></li>
+                            <li><a href="#">Invenore veritae</a></li>
                         </ul>
                     </div>
                 </div>
@@ -114,10 +148,10 @@
                     <div class="widget">
                         <h3 class="widget-title">Join Us</h3>
                         <ul class="no-bullet">
-                            <li>Lorem ipsum dolor</li>
-                            <li>Sit amet consecture</li>
-                            <li>Dolorem respequem</li>
-                            <li>Invenore veritae</li>
+                            <li><a href="#">Lorem ipsum dolor</a></li>
+                            <li><a href="#">Sit amet consecture</a></li>
+                            <li><a href="#">Dolorem respequem</a></li>
+                            <li><a href="#">Invenore veritae</a></li>
                         </ul>
                     </div>
                 </div>
@@ -125,10 +159,10 @@
                     <div class="widget">
                         <h3 class="widget-title">Social Media</h3>
                         <ul class="no-bullet">
-                            <li>Facebook</li>
-                            <li>Twitter</li>
-                            <li>Google+</li>
-                            <li>Pinterest</li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Google+</a></li>
+                            <li><a href="#">Pinterest</a></li>
                         </ul>
                     </div>
                 </div>
@@ -146,16 +180,14 @@
         </div> <!-- .container -->
 
     </footer>
+
 </div>
 <!-- Default snippet for navigation -->
 
-
-
 <script src="js/jquery-1.11.1.min.js"></script>
+<script src="bookrestaurant.js"></script>
 <!--<script src="js/plugins.js"></script>-->
 <!--<script src="js/app.js"></script>-->
-<script src="restaurant.js"></script>
-
 
 </body>
 

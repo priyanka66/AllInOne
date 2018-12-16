@@ -7,8 +7,8 @@ import com.twilio.type.PhoneNumber;
 import java.util.HashMap;
 
 public class SendSMS {
-    public static final String ACCOUNT_SID = "xyz";
-    public static final String AUTH_TOKEN = "xyz";
+    public static final String ACCOUNT_SID = "";
+    public static final String AUTH_TOKEN = "";
     HashMap<String, String> messageTemplate = new HashMap<String, String>();
 
     public void sendSMS(String receiver, String sender) {
@@ -16,6 +16,6 @@ public class SendSMS {
         Message message = Message.creator(
                 new PhoneNumber(receiver),
                 new PhoneNumber(sender),
-                "This is a test message").create();
+                "Booking confirmed. Please check your email for the tickets").create();
     }
 }

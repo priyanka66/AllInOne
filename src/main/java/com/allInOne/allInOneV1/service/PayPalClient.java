@@ -24,8 +24,8 @@ import javax.servlet.http.HttpServletRequest;
 @Repository
 public class PayPalClient {
 
-    String clientId = "xyz";
-    String clientSecret = "xyz";
+    String clientId = "";
+    String clientSecret = "";
 
     APIContext context = new APIContext(clientId, clientSecret, "sandbox");
 
@@ -55,8 +55,8 @@ public class PayPalClient {
 
         // Set redirect URLs
         RedirectUrls redirectUrls = new RedirectUrls();
-        redirectUrls.setCancelUrl("http://localhost:8080/paypal/cancel");
-        redirectUrls.setReturnUrl("http://localhost:8080/paypal/process");
+        redirectUrls.setCancelUrl("http://localhost:8088/paypal/cancel");
+        redirectUrls.setReturnUrl("http://localhost:8088/success.html");
 
 
         // Set payment details

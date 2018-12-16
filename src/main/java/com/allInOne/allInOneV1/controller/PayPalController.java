@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
+import com.allInOne.allInOneV1.service.SendSMS;
 
 @RestController
 @RequestMapping(value = "/paypal")
@@ -22,10 +23,13 @@ public class PayPalController {
     PayPalController(PayPalClient payPalClient){
         this.payPalClient = payPalClient;
     }
+    SendSMS sms = new SendSMS();
 
     @RequestMapping(path = "/make/payment", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Map<String, Object> makePayment(@RequestParam("sum") String sum){
+
+        sms.sendSMS("+13159499748","+13203350324");
         return payPalClient.createPayment(sum);
     }
 
