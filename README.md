@@ -43,11 +43,9 @@ Run the project  (Maven installed)
 
 ```
 mvn spring-boot:run
-
 ```
 
 Maven not installed 
 ```
 ./mvnw spring-boot:run
-
 ```
