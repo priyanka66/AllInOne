@@ -1,0 +1,26 @@
+
+INSERT INTO restaurant(restaurant_id, address, available_seats, latitute, longitude, num_seats, overview, restaurant_image, restaurant_name, overall_rating_id) VALUES (1, "6393 Thompson Rd, Syracuse, NY 13206", 50, 43.080680, -76.090550, 50, "Creative pancakes & other big breakfast plates, plus sandwiches, in cheery digs with counter seats.", "risenshine.jpeg", "Rise N Shine Diner", 1);
+
+INSERT INTO restaurant(restaurant_id, address, available_seats, latitute, longitude, num_seats, overview, restaurant_image, restaurant_name, overall_rating_id) VALUES (2, "246 W Willow St, Syracuse, NY 13202", 30, 43.052480, -76.154720, 30, "Barbecue chain serving Southern-style meats & draft brews in a retro setting (most have live music).", "bbq.jpg", "Dinosaur Bar-B-Que", 2);
+
+INSERT INTO restaurant(restaurant_id, address, available_seats, latitute, longitude, num_seats, overview, restaurant_image, restaurant_name, overall_rating_id) VALUES (3, "306 Hiawatha Blvd L-117, Syracuse, NY 13204", 20, 43.068830, -76.169250, 20, "Upscale Brazilian eatery featuring all-you-can-eat grilled meat carved tableside & a salad bar.", "texas.jpg", "Texas de Brazil", 3);
+
+INSERT INTO restaurant(restaurant_id, address, available_seats, latitute, longitude, num_seats, overview, restaurant_image, restaurant_name, overall_rating_id) VALUES (4, "306 Hiawatha Blvd W Spc J-112, Syracuse, NY 13290", 50, 43.068830, -76.169250, 50, "American chain restaurant offering sizable portions from a vast menu including signature cheesecake.", "cheese.jpg", "The Cheesecake Factory", 4);
+
+INSERT INTO restaurant(restaurant_id, address, available_seats, latitute, longitude, num_seats, overview, restaurant_image, restaurant_name, overall_rating_id) VALUES (5, "4467 E Genesee St, Syracuse, NY 13214", 30, 43.035320, -76.066100, 30, "Simply decorated Indian restaurant offering both Southern & Northern cuisine, plus a lunch buffet.", "dosagrill.jpg", "Dosa Grill", 5);
+
+INSERT INTO restaurant(restaurant_id, address, available_seats, latitute, longitude, num_seats, overview, restaurant_image, restaurant_name, overall_rating_id) VALUES (6, "147 Marshall St, Syracuse, NY 13210", 15, 43.041720, -76.135490, 15, "At Royal Indian Grill, we offer authentic dishes that are sure to appeal to your senses. Indian cuisine enjoys a great reputation among all ethnic foods in the world. ", "royal.jpg", "Royal Indian Grill", 6);
+
+INSERT INTO review(review_id, review_desc, user_rating) VALUES (1, "Good Restaurant", 9);
+INSERT INTO review(review_id, review_desc, user_rating) VALUES (2, "Loved the ckicken", 8);
+INSERT INTO review(review_id, review_desc, user_rating) VALUES (3, "Steak, chicken, lamb that melts in your mouth.", 7);
+INSERT INTO review(review_id, review_desc, user_rating) VALUES (4, "Best cheesecake in the world", 9);
+INSERT INTO review(review_id, review_desc, user_rating) VALUES (5, "Authentic Indian Food. Loved it.", 8);
+INSERT INTO review(review_id, review_desc, user_rating) VALUES (6, "If you want a full feasty meal this is the place, super awesome food and staff", 7);
+
+INSERT INTO review_rating(overall_rating_id, review_id) VALUES (1,1);
+INSERT INTO review_rating(overall_rating_id, review_id) VALUES (2,2);
+INSERT INTO review_rating(overall_rating_id, review_id) VALUES (3,3);
+INSERT INTO review_rating(overall_rating_id, review_id) VALUES (4,4);
+INSERT INTO review_rating(overall_rating_id, review_id) VALUES (5,5);
+INSERT INTO review_rating(overall_rating_id, review_id VALUES (6,6);

@@ -1,5 +1,8 @@
 package com.allInOne.allInOneV1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +24,8 @@ public class Review {
     @Min(0)
     @Max(5)
 	private int userRating;
-    
+
+	@JsonIgnore
 	public Integer getReviewId() {
 		return reviewId;
 	}

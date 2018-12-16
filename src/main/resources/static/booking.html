@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>Booking</title>
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="style.css">
+    
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/1-col-portfolio.css" rel="stylesheet">
+
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+    </head>
+    
+	<body>
+
+		<div id="site-content">
+                <header class="site-header">
+                        <div class="container">
+                            <a href="index.html" id="branding">
+                                <img src="images/logo.png" alt="" class="logo">
+                                <div class="logo-copy">
+                                    <h1 class="site-title">All in One</h1>
+                                    <small class="site-description">One stop for everything</small>
+                                </div>
+                            </a> <!-- #branding -->
+        
+                            <div class="main-navigation">
+                                <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                                <ul class="menu">
+                                    <li class="menu-item"><a href="index.html">Home</a></li>
+                                    <li class="menu-item"><a href="about.html">About</a></li>
+                                    <li class="menu-item current-menu-item"><a href="review.html">Movies</a></li>
+                                    <li class="menu-item"><a href="restaurant.html">Restaurants</a></li>
+                                </ul> <!-- .menu -->
+        
+                                <form action="#" class="search-form">
+                                    <input type="text" placeholder="Search...">
+                                    <button><i class="fa fa-search"></i></button>
+                                </form>
+                            </div> <!-- .main-navigation -->
+        
+                            <div class="mobile-navigation"></div>
+                        </div>
+                    </header>
+			<main class="main-content">
+				<div class="container">
+
+                    <!-- Page Heading -->
+                    <h1 class="my-4">Movie Booking</h1>
+              
+                    <!-- Project One -->
+                    <div class="row">
+
+                      <div class="col-md-6">
+                          <img class="img-fluid rounded mb-3 mb-md-0" src="dummy/imgs/destiny.jpg" alt=""> 
+                      </div>
+						  <div class="col-md-3" id="bookingrow">
+							<h3>Destiny USA</h3>
+							  <h3>No. of seats:</h3>
+							  <div id="seats" class="filters">
+								  <select name="#" id="op" class = "op" placeholder="Choose Category">
+									  <option value="0" selected="selected">0</option>
+									  <option value="1">1</option>
+									  <option value="2">2</option>
+									  <option value="3">3</option>
+									  <option value="4">4</option>
+								  </select>
+							  </div>
+							<div id="seatnum"></div>
+
+						  </div>
+
+						<div class="col-md-3" id="bookingrow">
+							<br><br>
+							<h3>Show timing:</h3>
+
+						<div id="shows" class="filters">
+							<select name="#" id="op1" class = "op1" placeholder="Choose Category">
+								<option value="9:30" selected="selected">9:30</option>
+								<option value="12:00">12:00</option>
+								<option value="14:30">14:30</option>
+								<option value="17:00">17:00</option>
+								<option value="20:30">20:30</option>
+							</select>
+						</div>
+						<div id="showname"></div>
+                      </div>
+					</div>
+                    <!-- /.row -->
+					<br><br>
+					<div class="row">
+
+						<div class="col-md-6">
+							<img class="img-fluid rounded mb-3 mb-md-0" src="dummy/imgs/tavern.jpg" alt="">
+						</div>
+						<div class="col-md-3" id="bookingrow">
+							<h3>Movie Tavern Syracuse</h3>
+							<h3>No. of seats:</h3>
+							<div id="seats" class="filters">
+								<select name="#" id="opt" class = "opt" placeholder="Choose Category">
+									<option value="0" selected="selected">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+								</select>
+							</div>
+							<div id="seatnum1"></div>
+
+						</div>
+
+						<div class="col-md-3" id="bookingrow">
+							<br><br>
+							<h3>Show timing:</h3>
+
+							<div id="shows" class="filters">
+								<select name="#" id="opt1" class = "opt1" placeholder="Choose Category">
+									<option value="9:30" selected="selected">9:30</option>
+									<option value="12:00">12:00</option>
+									<option value="14:30">14:30</option>
+									<option value="17:00">17:00</option>
+									<option value="20:30">20:30</option>
+								</select>
+							</div>
+							<div id="showname1"></div>
+						</div>
+					</div>
+					<!-- /.row -->
+                    
+              
+				</div>
+                  <!-- /.container -->
+              
+                  <!-- Footer -->
+                  <footer class="py-5 bg-dark">
+                    <div class="container">
+                      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+                    </div>
+                    <!-- /.container -->
+			</main>
+			<footer class="site-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">About Us</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia tempore vitae mollitia nesciunt saepe cupiditate</p>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Recent Review</h3>
+								<ul class="no-bullet">
+									<li><a href="#">Lorem ipsum dolor</a></li>
+									<li><a href="#">Sit amet consecture</a></li>
+									<li><a href="#">Dolorem respequem</a></li>
+									<li><a href="#">Invenore veritae</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Help Center</h3>
+								<ul class="no-bullet">
+									<li><a href="#">Lorem ipsum dolor</a></li>
+									<li><a href="#">Sit amet consecture</a></li>
+									<li><a href="#">Dolorem respequem</a></li>
+									<li><a href="#">Invenore veritae</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Join Us</h3>
+								<ul class="no-bullet">
+									<li><a href="#">Lorem ipsum dolor</a></li>
+									<li><a href="#">Sit amet consecture</a></li>
+									<li><a href="#">Dolorem respequem</a></li>
+									<li><a href="#">Invenore veritae</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Social Media</h3>
+								<ul class="no-bullet">
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Twitter</a></li>
+									<li><a href="#">Google+</a></li>
+									<li><a href="#">Pinterest</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Newsletter</h3>
+								<form action="#" class="subscribe-form">
+									<input type="text" placeholder="Email Address">
+								</form>
+							</div>
+						</div>
+					</div> <!-- .row -->
+
+					<div class="colophon">Copyright 2014 Company name, Designed by Themezy. All rights reserved</div>
+				</div> <!-- .container -->
+
+			</footer>
+        
+        </div>
+		<!-- Default snippet for navigation -->
+		
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="bookMovie.js"></script>
+		<!--<script src="js/plugins.js"></script>-->
+		<!--<script src="js/app.js"></script>-->
+		
+	</body>
+
+</html>

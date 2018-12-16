@@ -20,6 +20,8 @@ public class Movie {
 
     private String language;
 
+    private String movieImage;
+
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "Movie_Genre",
@@ -72,6 +74,14 @@ public class Movie {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public String getMovieImage() {
+        return movieImage;
+    }
+
+    public void setMovieImage(String img) {
+        this.movieImage = img;
     }
 
     public Set<Genre> getGenres() {
